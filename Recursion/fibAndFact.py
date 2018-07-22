@@ -22,7 +22,7 @@ def factorialRecursive(n):
 
 def Main():
 	print("I'm going to print fibbonacci and factorial calculation results")
-	print(factorialRecursive(1000))
+	print(factorialRecursive(10))
 
 	
 if __name__ == "__main__":
