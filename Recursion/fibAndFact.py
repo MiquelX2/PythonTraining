@@ -19,11 +19,17 @@ def factorialRecursive(n):
 	else:
 		result = n*factorialRecursive(n-1)
 	return result
+def factorialIterative(n):
+	result = 1
+	for i in range(1,n+1):
+		result *= i
+	return result
 
 def Main():
 	print("I'm going to print fibbonacci and factorial calculation results")
-	print(factorialRecursive(10))
-
+	print(math.factorial(997))
+	print(factorialIterative(997))
+	print(factorialRecursive(997))
 	
 if __name__ == "__main__":
 	Main()
