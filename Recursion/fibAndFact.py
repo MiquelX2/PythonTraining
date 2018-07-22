@@ -8,7 +8,7 @@ def fibbRecursive(n):
 	elif n == 1:
 		result = 1
 	else:
-		result = fibb(n-1)+ fibb(n-2)
+		result = fibbRecursive(n-1)+ fibbRecursive(n-2)
 	return result
 def factorialRecursive(n):
 	result = None
@@ -24,12 +24,27 @@ def factorialIterative(n):
 	for i in range(1,n+1):
 		result *= i
 	return result
-
+def fibbIterative(n):
+	result = None
+	if n<0:
+		print("Game over!")
+	elif n == 0:
+		result = 0
+	elif n == 1:
+		result = 1
+	else:
+		previous = 1
+		previousButOne = 0
+		for i in range(2,n+1):
+			result = previous + previousButOne
+			if i<n:
+				previousButOne = previous
+				previous = result
+	return result
 def Main():
 	print("I'm going to print fibbonacci and factorial calculation results")
-	print(math.factorial(997))
-	print(factorialIterative(997))
-	print(factorialRecursive(997))
+	print(fibbRecursive(200))
+	print(fibbIterative(200))
 	
 if __name__ == "__main__":
 	Main()
